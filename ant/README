@@ -1,0 +1,60 @@
+About
+=======
+
+
+
+Usage
+=======
+
+First, add a plugin execution and specify basic taglib properties - short name, uri, and version as well as the packages to scan for tag classes and functions.
+
+<plugin>
+  <groupId>com.vecna</groupId>
+  <artifactId>taglib-metadata-plugin</artifactId>
+  <configuration>
+    <shortName>test-taglib</shortName>
+    <uri>http://webapp.test.org/test-taglib</uri>
+    <version>1.0</version>
+    <packages>
+      <package>org.test.webapp.tags</package>
+    </packages>
+  </configuration>
+  <executions>
+    <execution>
+      <goals>
+        <goal>taglib</goal>
+      </goals>
+    </execution>
+  </executions>
+</plugin>
+
+By default, the plugin will bind to the process-classes phase. Other defaults are:
+* directory scanned for JSP 2.0 .tags - src/main/webapp/WEB-INF/tags
+* directory where the .tld is written - target/generated-web-resources/WEB-INF
+
+You will also need to configure the WAR plugin to pick up the .tld:
+
+<plugin>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-war-plugin</artifactId>
+  <configuration>
+    <webResources>            
+      <resource>
+        <directory>src/main/webapp</directory>
+        <filtering>true</filtering>              
+      </resource>
+      <resource>
+        <directory>${project.build.directory}/generated-web-resources</directory>
+      </resource>
+    </webResources>
+  </configuration>
+</plugin>
+
+Check out the test project to see a sample setup in action.
+
+Credits
+=======
+
+Originally developed by Vecna Technologies, Inc. and open sourced as part of its community service program. See the LICENSE file for more details.
+Vecna Technologies encourages employees to give 10% of their paid working time to community service projects. 
+To learn more about Vecna Technologies, its products and community service programs, please visit http://www.vecna.com.

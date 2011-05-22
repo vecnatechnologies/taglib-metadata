@@ -1,0 +1,35 @@
+About
+=======
+
+This library provides a set of annotations for JSP tag classes and functions. 
+
+Usage
+=======
+
+Annotate tag classes with the @JspTag class-level annotation and add @JspAttribute to each attribute setter:
+
+@JspTag(name = "mytag", bodyContent = JSP)
+class MyTag extends BodyTagSupport {
+      private String myattribute;
+
+      @JspAttribute(required = true)
+      public void setMyattribute(String value) {
+      	     myattribute = value;
+      }     
+}
+
+Annotate public static methods to be used as EL functions with @JspFunction:
+
+class MyFunctions {
+      @JspFunction(name = "mysum")
+      public static int sum(int a, int b) {
+      	     return a + b;
+      }     
+}
+
+Credits
+=======
+
+Originally developed by Vecna Technologies, Inc. and open sourced as part of its community service program. See the LICENSE file for more details.
+Vecna Technologies encourages employees to give 10% of their paid working time to community service projects. 
+To learn more about Vecna Technologies, its products and community service programs, please visit http://www.vecna.com.

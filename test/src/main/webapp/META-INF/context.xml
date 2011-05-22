@@ -1,0 +1,2 @@
+<Context path="${project.name}" docBase="${project.build.directory}/${project.build.finalName}" debug="0" crossContext="true" swallowOutput="true">
+</Context>
