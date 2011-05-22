@@ -1,7 +1,7 @@
 About
 =======
 
-
+This Ant task generates tag library descriptors (.tld files) from annotated tag classes (see the annotations module) and JSP 2 tag files.
 
 Usage
 =======
