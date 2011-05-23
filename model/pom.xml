@@ -29,10 +29,18 @@ permissions and limitations under the License.  -->
       <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
     </license>
   </licenses>
+  <developers>
+    <developer>
+      <id>vecna</id>
+      <name>Vecna Technologies</name>
+      <email>opensource@vecna.com</email>
+    </developer>
+  </developers>
   <parent>
     <groupId>com.vecna.parent</groupId>
     <artifactId>open-parent-pom</artifactId>
-    <version>1.0.8-SNAPSHOT</version>
+    <version>1.2</version>
+    <relativePath />
   </parent>
   <dependencies>
     <dependency>

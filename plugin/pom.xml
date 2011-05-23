@@ -17,6 +17,19 @@
       <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
     </license>
   </licenses>
+  <developers>
+    <developer>
+      <id>vecna</id>
+      <name>Vecna Technologies</name>
+      <email>opensource@vecna.com</email>
+    </developer>
+  </developers>
+  <parent>
+    <groupId>com.vecna.parent</groupId>
+    <artifactId>open-parent-pom</artifactId>
+    <version>1.2</version>
+    <relativePath />
+  </parent>
   <build>
     <plugins>
       <plugin>
@@ -65,7 +78,7 @@
     <dependency>
       <groupId>com.vecna</groupId>
       <artifactId>maven-commons</artifactId>
-      <version>0.0.2-SNAPSHOT</version>
+      <version>0.0.2</version>
       <scope>compile</scope>
     </dependency>    
   </dependencies>

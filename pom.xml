@@ -30,10 +30,17 @@ permissions and limitations under the License.  -->
       <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
     </license>
   </licenses>
+  <developers>
+    <developer>
+      <id>vecna</id>
+      <name>Vecna Technologies</name>
+      <email>opensource@vecna.com</email>
+    </developer>
+  </developers>
   <scm>
     <connection>scm:git:git://github.com/vecnatechnologies/taglib-metadata.git</connection>
-    <url>scm:git:git://github.com/vecnatechnologies/taglib-metadata.git</url>
-    <developerConnection>scm:git:git://github.com/vecnatechnologies/taglib-metadata.git</developerConnection>
+    <developerConnection>scm:git:git@github.com:vecnatechnologies/taglib-metadata.git</developerConnection>
+    <url>https://github.com/vecnatechnologies/taglib-metadata</url>
   </scm>
   <modules>
     <module>annotations</module>
@@ -46,7 +53,7 @@ permissions and limitations under the License.  -->
   <parent>
     <groupId>com.vecna.parent</groupId>
     <artifactId>open-parent-pom</artifactId>
-    <version>1.0.8-SNAPSHOT</version>
+    <version>1.2</version>
     <relativePath />
   </parent>
 </project>
