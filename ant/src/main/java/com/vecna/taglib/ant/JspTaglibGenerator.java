@@ -6,7 +6,7 @@
  * obtain a copy of the License at
  *
  * http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
@@ -25,8 +25,8 @@ import org.apache.tools.ant.Task;
 import com.vecna.taglib.model.JspTaglibModel;
 import com.vecna.taglib.processor.JspAnnotationsProcessor;
 import com.vecna.taglib.processor.JspModelMarshaller;
-import com.vecna.taglib.processor.JspTagFileProcessor;
 import com.vecna.taglib.processor.JspModelMarshaller.JspMarshallerException;
+import com.vecna.taglib.processor.JspTagFileProcessor;
 
 /**
  * JSP taglib generator Ant task
@@ -41,6 +41,8 @@ public class JspTaglibGenerator extends Task {
   private String m_shortName;
   private String m_version;
   private String m_uri;
+
+  private boolean m_lookInsideJars;
 
   private JspAnnotationsProcessor m_annotationsProcessor = new JspAnnotationsProcessor();
   private JspTagFileProcessor m_tagFileProcessor = new JspTagFileProcessor();
@@ -85,7 +87,7 @@ public class JspTaglibGenerator extends Task {
   public void setVersion(String version) {
     m_version = version;
   }
-  
+
   /**
    * Set the uri.
    * @param uri The uri to set
@@ -93,7 +95,7 @@ public class JspTaglibGenerator extends Task {
   public void setUri(String uri) {
     m_uri = uri;
   }
-  
+
   /**
    * Set the shortName.
    * @param shortName The shortName to set
@@ -101,7 +103,15 @@ public class JspTaglibGenerator extends Task {
   public void setShortName(String shortName) {
     m_shortName = shortName;
   }
-  
+
+  /**
+   * Whether to look inside JARs when scanning for tag classes
+   * @param lookInsideJars whether to look insider JARs
+   */
+  public void setLookInsideJars(boolean lookInsideJars) {
+    m_lookInsideJars = lookInsideJars;
+  }
+
   /**
    * {@inheritDoc}
    */
@@ -112,8 +122,9 @@ public class JspTaglibGenerator extends Task {
     taglib.version = m_version;
     taglib.uri = m_uri;
 
-    m_annotationsProcessor.addLocalMetadata(StringUtils.split(m_packages, ','), taglib, getClass().getClassLoader());
-    if (m_jspRoot != null) {   
+    m_annotationsProcessor.addLocalMetadata(StringUtils.split(m_packages, ','), taglib,
+                                            getClass().getClassLoader(), m_lookInsideJars);
+    if (m_jspRoot != null) {
       m_tagFileProcessor.addLocalMetadata(m_jspRoot, m_tagFileDir, taglib);
     }
 

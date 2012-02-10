@@ -6,7 +6,7 @@
  * obtain a copy of the License at
  *
  * http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
@@ -86,6 +86,11 @@ public class JspTaglibMetadataMojo extends BuildClassPathMojo {
   private String[] packages;
 
   /**
+   * @parameter
+   */
+  private boolean lookInsideJars;
+
+  /**
    * {@inheritDoc}
    */
   @Override
@@ -103,7 +108,7 @@ public class JspTaglibMetadataMojo extends BuildClassPathMojo {
     taglib.version = version;
     taglib.uri = uri;
 
-    m_annotationsProcessor.addLocalMetadata(packages, taglib);
+    m_annotationsProcessor.addLocalMetadata(packages, taglib, lookInsideJars);
     if (jspRoot != null) {
       m_tagFileProcessor.addLocalMetadata(jspRoot, tagFileDir, taglib);
     }
