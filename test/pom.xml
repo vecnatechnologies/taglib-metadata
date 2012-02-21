@@ -18,7 +18,7 @@ permissions and limitations under the License.  -->
   <packaging>war</packaging>
   <name>Taglib Plugin Test</name>
   <description>A test/sample war project for the Taglib Metadata Plugin</description>
-  <version>1.1-SNAPSHOT</version>
+  <version>1.1</version>
   <organization>
     <name>Vecna Technologies</name>
     <url>http://vecna.com</url>
@@ -57,7 +57,7 @@ permissions and limitations under the License.  -->
       <plugin>
       	<groupId>com.vecna</groupId>
       	<artifactId>taglib-metadata-plugin</artifactId>
-      	<version>1.1-SNAPSHOT</version>
+      	<version>1.1</version>
       	<configuration>
           <shortName>test-taglib</shortName>
           <uri>http://vecna.com/test-taglib</uri>
@@ -103,7 +103,7 @@ permissions and limitations under the License.  -->
     <dependency>
       <groupId>com.vecna</groupId>
       <artifactId>taglib-metadata-annotations</artifactId>
-      <version>1.1-SNAPSHOT</version>
+      <version>1.1</version>
     </dependency>
     <dependency>
     	<groupId>javax.servlet.jsp</groupId>
