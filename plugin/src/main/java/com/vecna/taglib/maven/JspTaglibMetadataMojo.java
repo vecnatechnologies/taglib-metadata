@@ -20,6 +20,7 @@ import java.io.File;
 import java.io.IOException;
 
 import org.apache.maven.plugin.MojoExecutionException;
+import org.apache.maven.plugin.MojoFailureException;
 import org.apache.maven.project.MavenProject;
 import org.codehaus.plexus.util.FileUtils;
 
@@ -91,11 +92,28 @@ public class JspTaglibMetadataMojo extends BuildClassPathMojo {
   private boolean lookInsideJars;
 
   /**
+   * @parameter
+   */
+  private boolean disabled = false;
+
+  /**
    * {@inheritDoc}
    */
   @Override
   protected MavenProject getProject() {
     return project;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  @Override
+  public void execute() throws MojoExecutionException, MojoFailureException {
+    if (!disabled) {
+      super.execute();
+    } else {
+      getLog().info("skipping taglib generation");
+    }
   }
 
   /**
