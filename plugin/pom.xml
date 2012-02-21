@@ -3,7 +3,7 @@
   <groupId>com.vecna</groupId>
   <artifactId>taglib-metadata-plugin</artifactId>
   <packaging>maven-plugin</packaging>
-  <version>1.1</version>
+  <version>1.2-SNAPSHOT</version>
   <name>taglib-metadata-plugin Maven Mojo</name>
   <description>Maven plugin for JSP tag annotations processor</description>
   <organization>
@@ -66,7 +66,7 @@
     <dependency>
       <groupId>com.vecna</groupId>
       <artifactId>taglib-metadata-processor</artifactId>
-      <version>1.1</version>
+      <version>1.2-SNAPSHOT</version>
       <scope>compile</scope>
     </dependency>
     <dependency>

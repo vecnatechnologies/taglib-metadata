@@ -17,7 +17,7 @@ permissions and limitations under the License.  -->
   <artifactId>taglib-metadata-ant</artifactId>
   <name>taglib-metadata-ant</name>
   <description>Ant task for processing JSP tag annotations</description>
-  <version>1.1</version>
+  <version>1.2-SNAPSHOT</version>
   <organization>
     <name>Vecna Technologies</name>
     <url>http://vecna.com</url>
@@ -46,7 +46,7 @@ permissions and limitations under the License.  -->
     <dependency>
       <groupId>com.vecna</groupId>
       <artifactId>taglib-metadata-processor</artifactId>
-      <version>1.1</version>
+      <version>1.2-SNAPSHOT</version>
       <scope>compile</scope>
     </dependency>
     <dependency>

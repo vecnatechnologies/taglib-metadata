@@ -16,7 +16,7 @@ permissions and limitations under the License.  -->
   <groupId>com.vecna</groupId>
   <artifactId>taglib-metadata-annotations</artifactId>
   <name>Taglib Annotations</name>
-  <version>1.1</version>
+  <version>1.2-SNAPSHOT</version>
   <description>Annotations for JSP tag classes and functions</description>
   <organization>
     <name>Vecna Technologies</name>
