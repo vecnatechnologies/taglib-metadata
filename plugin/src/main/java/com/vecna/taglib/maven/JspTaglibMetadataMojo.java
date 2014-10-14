@@ -21,6 +21,11 @@ import java.io.IOException;
 
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
+import org.apache.maven.plugins.annotations.Component;
+import org.apache.maven.plugins.annotations.LifecyclePhase;
+import org.apache.maven.plugins.annotations.Mojo;
+import org.apache.maven.plugins.annotations.Parameter;
+import org.apache.maven.plugins.annotations.ResolutionScope;
 import org.apache.maven.project.MavenProject;
 import org.codehaus.plexus.util.FileUtils;
 
@@ -32,68 +37,76 @@ import com.vecna.taglib.processor.JspModelMarshaller.JspMarshallerException;
 import com.vecna.taglib.processor.JspTagFileProcessor;
 
 /**
- * Generates taglib from annotations
- *
- * @requiresDependencyResolution
- * @goal taglib
- * @phase process-classes
+ * Generates taglib from annotations.
  */
+@Mojo(name = "taglib",
+      defaultPhase = LifecyclePhase.PROCESS_CLASSES,
+      requiresDependencyResolution = ResolutionScope.COMPILE)
 public class JspTaglibMetadataMojo extends BuildClassPathMojo {
   private final JspAnnotationsProcessor m_annotationsProcessor = new JspAnnotationsProcessor();
   private final JspTagFileProcessor m_tagFileProcessor = new JspTagFileProcessor();
   private final JspModelMarshaller m_marshaller = new JspModelMarshaller();
 
   /**
-   * @parameter expression="${project}"
-   * @required
-   * @readonly
+   * Maven project reference.
    */
+  @Component
   private MavenProject project;
 
-
   /**
+   * TLD output directory.
+   *
    * @parameter expression="${project.build.directory}/generated-web-resources/WEB-INF"
    */
+  @Parameter(defaultValue = "${project.build.directory}/generated-web-resources/WEB-INF")
   private String taglibDir;
 
   /**
-   * @parameter default-value="src/main/webapp"
+   * Webapp source directory.
    */
+  @Parameter(defaultValue = "src/main/webapp")
   private String jspRoot;
 
   /**
-   * @parameter default-value="/WEB-INF/tags"
+   * JSP tags directory.
    */
+  @Parameter(defaultValue = "/WEB-INF/tags")
   private String tagFileDir;
 
   /**
-   * @parameter
+   * TLD short name.
    */
+  @Parameter
   private String shortName;
 
   /**
-   * @parameter
+   * TLD url.
    */
+  @Parameter
   private String uri;
 
   /**
-   * @parameter
+   * TLD version.
    */
+  @Parameter
   private String version;
 
   /**
-   * @parameter
+   * Packages with tag classes.
    */
+  @Parameter
   private String[] packages;
 
   /**
-   * @parameter
+   * Whether to introspect dependent jars for tag classes.
    */
+  @Parameter
   private boolean lookInsideJars;
 
   /**
-   * @parameter
+   * Skip.
    */
+  @Parameter
   private boolean disabled = false;
 
   /**
