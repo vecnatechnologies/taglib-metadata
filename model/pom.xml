@@ -16,7 +16,7 @@ permissions and limitations under the License.  -->
   <groupId>com.vecna</groupId>
   <artifactId>taglib-metadata-model</artifactId>
   <name>Taglib Model</name>
-  <version>1.3</version>
+  <version>1.4-SNAPSHOT</version>
   <description>JSP taglib model classes</description>
   <organization>
     <name>Vecna Technologies</name>
@@ -46,7 +46,7 @@ permissions and limitations under the License.  -->
     <dependency>
       <groupId>com.vecna</groupId>
       <artifactId>taglib-metadata-annotations</artifactId>
-      <version>1.3</version>
+      <version>1.4-SNAPSHOT</version>
     </dependency>
   </dependencies>
 </project>

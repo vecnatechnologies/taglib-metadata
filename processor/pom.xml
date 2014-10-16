@@ -16,7 +16,7 @@ permissions and limitations under the License.  -->
   <groupId>com.vecna</groupId>
   <artifactId>taglib-metadata-processor</artifactId>
   <name>taglib-metadata-processor</name>
-  <version>1.3</version>
+  <version>1.4-SNAPSHOT</version>
   <description>JSP taglib annotations processor</description>
   <organization>
     <name>Vecna Technologies</name>
@@ -46,7 +46,7 @@ permissions and limitations under the License.  -->
     <dependency>
       <groupId>com.vecna</groupId>
       <artifactId>taglib-metadata-annotations</artifactId>
-      <version>1.3</version>
+      <version>1.4-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>commons-beanutils</groupId>
@@ -66,7 +66,7 @@ permissions and limitations under the License.  -->
     <dependency>
       <groupId>com.vecna</groupId>
       <artifactId>taglib-metadata-model</artifactId>
-      <version>1.3</version>
+      <version>1.4-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>
